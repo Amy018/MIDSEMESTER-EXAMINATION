@@ -1,32 +1,45 @@
-// Step 1: Personalized Greeting
-let userName = prompt("Welcome to EatNow Cafe! Please enter your first name:");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EatNow Cafe Menu</title>
+</head>
+<body>
+    <h2>Open the Console to See the Menu</h2>
+    <script>
+        // Step 1: Personalized Greeting
+        let userName = prompt("Welcome to EatNow Cafe! Please enter your first name:");
+        
+        // Assign "Guest" if the input is empty or only contains spaces
+        if (!userName || userName.trim() === "") {
+            userName = "Guest";
+        }
 
-// Assign "Guest" if the input is empty or only contains spaces
-if (!userName || userName.trim() === "") {
-    userName = "Guest";
-}
+        // Step 2: Welcome Message
+        alert(`Hello, ${userName}! Welcome to EatNow Cafe. Enjoy your meal!`);
 
-// Step 2: Welcome Message
-alert(`Hello, ${userName}! Welcome to EatNow Cafe. Enjoy your meal!`);
+        // Step 3: Display Menu Items
+        let menu = ["Grilled Chicken", "Pasta Alfredo", "Caesar Salad", "Margherita Pizza", "Vegetable Stir-fry"];
+        
+        console.log("EatNow Cafe Menu:");
+        menu.forEach((item, index) => {
+            console.log(`${index + 1}. ${item}`);
+        });
 
-// Step 3: Display Menu Items
-let menu = ["Grilled Chicken", "Pasta Alfredo", "Caesar Salad", "Margherita Pizza", "Vegetable Stir-fry"];
+        // Step 4: Adding a New Dish
+        let newDish = prompt("Would you like to suggest a new dish? Enter the dish name:");
 
-console.log("EatNow Cafe Menu:");
-menu.forEach((item, index) => {
-    console.log(`${index + 1}. ${item}`);
-});
-
-// Step 4: Adding a New Dish
-let newDish = prompt("Would you like to suggest a new dish? Enter the dish name:");
-
-// Validate the input: If valid, add the new dish; otherwise, show an error message
-if (newDish && newDish.trim() !== "") {
-    menu.push(newDish.trim()); // Adding the new dish to the menu
-    console.log("Updated Menu:");
-    menu.forEach((item, index) => {
-        console.log(`${index + 1}. ${item}`);
-    });
-} else {
-    console.log("No dish added. Please enter a valid dish name.");
-}
+        // Validate the input: If valid, add the new dish; otherwise, show an error message
+        if (newDish && newDish.trim() !== "") {
+            menu.push(newDish.trim()); // Adding the new dish to the menu
+            console.log("Updated Menu:");
+            menu.forEach((item, index) => {
+                console.log(`${index + 1}. ${item}`);
+            });
+        } else {
+            console.log("No dish added. Please enter a valid dish name.");
+        }
+    </script>
+</body>
+</html>
